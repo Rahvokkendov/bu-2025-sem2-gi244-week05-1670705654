@@ -8,11 +8,23 @@ public class SpawnManager : MonoBehaviour
     private int animalIndex;
     public float spawnRangeX = 15;
 
+
+    private void Start()
+    {
+        InvokeRepeating(nameof(SpawnAnimals), 2f, 3f);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            animalIndex = Random.Range(0, animalPrefabs.Length);
+            SpawnAnimals();
+        }
+    }
+
+    void SpawnAnimals()
+    {  
+        animalIndex = Random.Range(0, animalPrefabs.Length);
             Vector3 spawnPos = new(
                 Random.Range(-spawnRangeX, spawnRangeX),
                 transform.position.y,
@@ -23,6 +35,6 @@ public class SpawnManager : MonoBehaviour
                 spawnPos,
                 animalPrefabs[animalIndex].transform.rotation
             );
-        }
+
     }
 }
