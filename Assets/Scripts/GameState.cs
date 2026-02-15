@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameState : MonoBehaviour
 {
     public int hitCount = 0;
+    public int maxDogPass = 500;
     public const string ENEMY_TAG = "Dogs";
     void OnTriggerEnter(Collider other)
     {
@@ -10,7 +11,7 @@ public class GameState : MonoBehaviour
         {
             hitCount++;
         }
-        if (hitCount >= 500)
+        if (hitCount >= maxDogPass)
         {
             Debug.Log("Game Ovah");
             Time.timeScale = 0f;

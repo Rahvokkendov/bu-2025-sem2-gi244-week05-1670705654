@@ -7,17 +7,28 @@ public class WaveController : MonoBehaviour
     private Wave wave;
     private int spawnedEnemies = 0;
     private float nextSpawnTime = 0f;
-
+    private float waveTime = 0f;
     public void ChangeWave(Wave wave)
     {
         this.wave = wave;
         spawnedEnemies = 0;
         nextSpawnTime = Time.time;
+
     }
 
     public bool IsComplete()
     {
-        return spawnedEnemies >= wave.enemyCount;
+        waveTime = Time.time;
+        if (waveTime > wave.waveInterval && spawnedEnemies >= wave.enemyCount)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+            
+        //return spawnedEnemies >= wave.enemyCount;
     }
 
 

@@ -677,6 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitCount: 0
+  maxDogPass: 500
 --- !u!1 &992285705
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ public class WaveSpawnManager : MonoBehaviour
     public Wave[] waves;
     public WaveController waveController;
     private int currentWave;
-
     void Start()
     {
         currentWave = 0;
